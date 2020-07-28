@@ -1,5 +1,4 @@
 ## 2주차 과제
----
 
 ## MAU(Monthly Active User) 구하기
 
@@ -70,6 +69,7 @@ order by
 
 ~~~
 
+- 월별 userid개수를 count
 ~~~sql
 
 select
