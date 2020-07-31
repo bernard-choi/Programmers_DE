@@ -89,3 +89,17 @@ group by
 order by
 	YEAR_MONTH ;
   ~~~
+
+## 가상의 데이터 인프라 구축하기
+
+- 어떤 데이터들을 데이터 웨어하우스로 복사해오고 싶은지(raw_data로 들어갈 데이터들)
+
+- 어떤 형태의 summary table들을 만들고 싶은지 (analytics폴더 밑에 만들어질 테이블들)
+
+- KT IPTV 데이터를 접해본 경험이 있습니다. 이를 바탕으로 raw_data및 summary_table을 구성해보았습니다.
+
+- 유저, 컨텐츠, 플랫폼(OTV, OTM) 크게 3가지로 구분할 수 있습니다. 
+
+
+
+![](https://user-images.githubusercontent.com/36406676/89041604-9fe3c300-d380-11ea-8e39-0d019009a8f4.png)
