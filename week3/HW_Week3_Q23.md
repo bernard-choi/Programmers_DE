@@ -24,6 +24,7 @@ FROM   raw_data.session_timestamp AS ts --sessionid 를 기준으로 timestanp, 
 
 
 [ 결과값 ]
+
 ![](https://user-images.githubusercontent.com/36406676/89627709-39a5f580-d8d6-11ea-8c60-4d6baf11b0d2.PNG)
 
 
@@ -87,5 +88,7 @@ GROUP  BY 1,
 ORDER  BY 1,
           2;
 ```
+
+[ 결과값 ]
 
 ![](https://user-images.githubusercontent.com/36406676/89704772-ea24ff80-d991-11ea-83d4-f6e687155e3f.PNG)
