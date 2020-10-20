@@ -2,11 +2,13 @@ from airflow import DAG
 from airflow.operators import PythonOperator
 from datetime import datetime
 import requests
+import psycopg2
+
 
 dag_second_assignment = DAG(
 	dag_id = 'second_assignment',
 	start_date = datetime(2020,8,11), # 적당히 조절
-	schedule_interval = '0 2 * * *')  # 적당히 조절
+	schedule_interval = '5 10 * * *')  # 적당히 조절
 
 def extract(url):
     f = requests.get(link)
@@ -53,7 +55,7 @@ def get_Redshift_connection():
 def etl():
     link = "https://s3-geospatial.s3-us-west-2.amazonaws.com/name_gender.csv"
     data = extract(link)
-    lines = transform(data
+    lines = transform(data)
     load(lines)
 
 	 # 여기에 코드를 기록
