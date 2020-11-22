@@ -4,6 +4,8 @@ from datetime import datetime
 import requests
 import psycopg2
 
+## HelloWorld.py (Airflow 스크립트)와 Simple_ETL (DB접속 및 sql 실행문) 을 참고하여 RedShift DB에 Insert문을 짜보시오.
+
 
 dag_second_assignment = DAG(
 	dag_id = 'second_assignment',
@@ -22,7 +24,7 @@ def load(lines):
     # BEGIN과 END를 사용해서 SQL 결과를 트랜잭션으로 만들어주는 것이 좋음
     # BEGIN;TRUNCATE TABLE;INSERT INTO TABLE VALUES ('KEEYONG', 'MALE');END;
     cur = get_Redshift_connection()
-    sql = 'Truncate gafield8785.name_gender'
+    sql = 'BEGIN;Truncate gafield8785.name_gender'
     print(sql)
     cur.execute(sql)
     for r in lines:
@@ -37,8 +39,8 @@ def load(lines):
 
 def get_Redshift_connection():
     host = "grepp-data.cduaw970ssvt.ap-northeast-2.redshift.amazonaws.com"
-    redshift_user = "gafield8785"
-    redshift_pass = "Gafield87851!"
+    redshift_user = ""
+    redshift_pass = ""
     port = 5439
     dbname = "dev"
     conn = psycopg2.connect("dbname={dbname} user={user} host={host} password={password} port={port}".format(
